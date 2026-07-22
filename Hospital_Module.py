@@ -16,10 +16,8 @@ def add_hospital(h_id, patient_list):
         else:
             hospitals[h_id] = patient_list
             print("Hospital added successfully.")
-
     except Exception as e:
         print(e)
         logging.error(str(e))
-
     else:
         logging.info(f"Hospital {h_id} added successfully.")

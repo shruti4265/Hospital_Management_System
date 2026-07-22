@@ -7,21 +7,22 @@ logging.basicConfig(
     format="%(asctime)s %(levelname)s %(message)s"
 )
 
-def view_all_hospitals():
+def view_all():
+
     try:
 
         if not Hospital_Module.hospitals:
-            print("No hospitals found.")
-            logging.warning("No hospitals found.")
+            print("No hospitals available.")
 
         else:
 
             for h_id, patients in Hospital_Module.hospitals.items():
 
-                print("\nHospital ID:", h_id)
+                print("\nHospital ID :", h_id)
 
                 for p_id, details in patients.items():
 
+                    print("----------------------")
                     print("Patient ID :", p_id)
                     print("Name       :", details[0])
                     print("Age        :", details[1])
@@ -32,4 +33,4 @@ def view_all_hospitals():
         logging.error(str(e))
 
     else:
-        logging.info("Viewed all hospitals.")
+        logging.info("Displayed all records.")
